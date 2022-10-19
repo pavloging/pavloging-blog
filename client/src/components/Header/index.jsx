@@ -33,63 +33,47 @@ export const Header = () => {
               </pre>
             </div>
           </Link>
-
-          {isAuth && (
-            <>
-              <Link className={styles.logo} to="/">
-                <div>Home</div>
-              </Link>
-              <Link className={styles.logo} to="/tags">
-                <div>Tags</div>
-              </Link>
-              <Link className={styles.logo} to="/chat">
-                <div>Chat</div>
-              </Link>
-              <Link className={styles.logo} to="/music">
-                <div>Music</div>
-              </Link>
-            </>
-          )}
-
-          <div className={styles.buttons}>
-            {isAuth ? (
-              <>
-                <Link className="link" to="/add-post">
-                  <Button variant="outlined">Написать статью</Button>
-                </Link>
-                <Button
-                  onClick={onClickLogout}
-                  variant="outlined"
-                  color="error"
-                >
-                  Выйти
-                </Button>
-              </>
-            ) : (
-              <>
-                <Link className="link" to="/login">
-                  <Button variant="outlined">Войти</Button>
-                </Link>
-                <Link className="link" to="/register">
-                  <Button variant="outlined" sx={{ background: "blue" }}>
-                    Создать аккаунт
+          <div style={{ display: "flex" }}>
+            <div className={styles.buttons}>
+              {isAuth ? (
+                <>
+                  <Link className="link" to="/add-post">
+                    <Button variant="outlined">Написать статью</Button>
+                  </Link>
+                  <Button
+                    onClick={onClickLogout}
+                    variant="outlined"
+                    color="error"
+                  >
+                    Выйти
                   </Button>
-                </Link>
-              </>
+                </>
+              ) : (
+                <>
+                  <Link className="link" to="/login">
+                    <Button variant="outlined">Войти</Button>
+                  </Link>
+                  <Link className="link" to="/register">
+                    <Button variant="outlined" sx={{ background: "blue" }}>
+                      Создать аккаунт
+                    </Button>
+                  </Link>
+                </>
+              )}
+            </div>
+            {isAuth && (
+              <Box sx={{ flexGrow: 0 }}>
+                <Tooltip title="Your avatar">
+                  <IconButton sx={{ p: 0 }}>
+                    <Avatar
+                      alt="Remy Sharp"
+                      src={creator ? creator.avatarUrl : null}
+                    />
+                  </IconButton>
+                </Tooltip>
+              </Box>
             )}
           </div>
-          {isAuth && (
-            <Box sx={{ flexGrow: 0 }}>
-              <Tooltip title="Your avatar">
-                <IconButton sx={{ p: 0 }}>
-                  <Avatar
-                    alt="Remy Sharp"
-                    src={creator ? creator.avatarUrl : null}
-                  />
-                </IconButton>
-              </Tooltip>
-            </Box>
-          )}
         </div>
       </Container>
     </div>

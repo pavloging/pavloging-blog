@@ -3,7 +3,6 @@ import fs from "fs";
 import multer from "multer";
 import cors from "cors";
 import mongoose from "mongoose";
-import { WebSocketServer } from "ws";
 
 import {
   registerValidation,
@@ -68,7 +67,6 @@ app.get("/posts", PostController.getAll);
 app.get("/posts/popular", PostController.getAllPopular);
 app.get("/posts/tags", PostController.getLastTags);
 app.get("/posts/:id", PostController.getOne);
-app.post("/posts/:id", checkAuth, PostController.like);
 app.post(
   "/posts",
   checkAuth,
@@ -93,28 +91,3 @@ app.listen(process.env.PORT || 4444, (err) => {
 
   console.log("Server OK");
 });
-
-//WebSocketServer
-const wss = new WebSocketServer({ port: 8080 }, () =>
-  console.log(`WebSocketServer started on 8080`)
-);
-
-wss.on("connection", function connection(ws) {
-  ws.on("message", function (message) {
-    message = JSON.parse(message);
-    switch (message.event) {
-      case "message":
-        broadcastMessage(message);
-        break;
-      case "connection":
-        broadcastMessage(message);
-        break;
-    }
-  });
-});
-
-function broadcastMessage(message, id) {
-  wss.clients.forEach((client) => {
-    client.send(JSON.stringify(message));
-  });
-}

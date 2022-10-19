@@ -66,7 +66,6 @@ export const Home = () => {
                     }
                     creator={obj.creator}
                     createdAt={obj.createdAt}
-                    likesCount={obj.likesCount}
                     viewsCount={obj.viewsCount}
                     commentsCount={3}
                     tags={obj.tags}

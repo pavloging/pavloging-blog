@@ -43,7 +43,6 @@ export const FullPost = () => {
         }
         creator={data.creator}
         createdAt={data.createdAt}
-        likesCount={data.likesCount}
         viewsCount={data.viewsCount}
         commentsCount={3}
         tags={data.tags}

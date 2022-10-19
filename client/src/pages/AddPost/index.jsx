@@ -60,8 +60,6 @@ export const AddPost = () => {
         ? await axios.patch(`/posts/${id}`, fields)
         : await axios.post("/posts", fields);
 
-      console.log(data);
-
       const _id = isEditing ? id : data._id;
       navigate(`/posts/${_id}`);
     } catch (err) {
@@ -77,7 +75,7 @@ export const AddPost = () => {
         .then(({ data }) => {
           setTitle(data.title);
           setText(data.text);
-          setTags(data.tags);
+          setTags(data.tags.trim());
           setImageUrl(data.imageUrl);
         })
         .catch((err) => {
@@ -146,6 +144,7 @@ export const AddPost = () => {
       <br />
       <br />
       <TextField
+        className={styles.titleInput}
         classes={{ root: styles.title }}
         variant="standard"
         placeholder="Заголовок статьи..."
@@ -154,11 +153,12 @@ export const AddPost = () => {
         fullWidth
       />
       <TextField
+        className={styles.tagsInput}
         classes={{ root: styles.tags }}
         variant="standard"
         placeholder="Тэги"
         value={tags}
-        onChange={(e) => setTags(e.target.value)}
+        onChange={(e) => setTags(e.target.value.trim())}
         fullWidth
       />
       <SimpleMDE

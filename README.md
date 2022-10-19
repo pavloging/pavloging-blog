@@ -2,8 +2,8 @@
 
 # Client:
 
-Go to the Client folder and run the npm install command, then after the download is complete, run the command npm start.
+Go to the Client folder and run the 'npm install' command, then after the download is complete, run the command 'npm start'.
 
 # Server:
 
-Go to the Client folder and run the npm install command, then after the download is complete, run the command npm start npm run start:dev.
+Go to the Client folder and run the 'npm install' command, then after the download is complete, run the command 'npm run start:dev'.

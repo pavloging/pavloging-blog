@@ -15,9 +15,6 @@ import {
   AddPost,
   Login,
   TagDefinite,
-  Tags,
-  Music,
-  Chat,
 } from "./pages";
 
 function App() {
@@ -37,10 +34,7 @@ function App() {
           <Route path="/add-post" element={<AddPost />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
-          <Route path="/tags" element={<Tags />} />
           <Route path="/tags/*" element={<TagDefinite />} />
-          <Route path="/music" element={<Music />} />
-          <Route path="/chat" element={<Chat />} />
         </Routes>
       </Container>
 

@@ -20,7 +20,6 @@ export const TagDefinite = () => {
   const tagUrl = params["*"];
 
   const posts = useSelector((state) => state.posts.posts.items);
-  console.log("post", posts);
 
   const dispatch = useDispatch();
   React.useEffect(() => {

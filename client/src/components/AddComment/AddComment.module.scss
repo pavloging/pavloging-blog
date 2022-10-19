@@ -11,9 +11,11 @@
 }
 
 .form {
+  filter: invert(1);
   width: 100%;
 
   button {
+    filter: invert(1);
     margin-top: 10px;
   }
 }

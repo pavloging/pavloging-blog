@@ -27,13 +27,6 @@ export const fetchRemovePost = createAsyncThunk(
   }
 );
 
-export const fetchLikePost = createAsyncThunk(
-  "posts/fetchLikePost",
-  async (id) => {
-    const { data } = axios.post(`/posts/${id}`);
-    return data;
-  }
-);
 
 const initialState = {
   posts: {
@@ -100,17 +93,6 @@ const postsSlice = createSlice({
       );
     },
     [fetchRemovePost.rejected]: (state) => {
-      state.posts.status = "error";
-    },
-
-    //fetchLikePost
-    [fetchLikePost.pending]: (state, action) => {
-      const index = state.posts.items.findIndex(
-        (item) => item._id === action.meta.arg
-      );
-      state.posts.items[index].likesCount += 1;
-    },
-    [fetchLikePost.rejected]: (state) => {
       state.posts.status = "error";
     },
   },

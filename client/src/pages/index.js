@@ -4,6 +4,3 @@ export { AddPost } from "./AddPost";
 export { Registration } from "./Registration";
 export { Login } from "./Login";
 export { TagDefinite } from "./TagDefinite";
-export { Tags } from "./Tags";
-export { Music } from "./Music";
-export { Chat } from "./Chat";

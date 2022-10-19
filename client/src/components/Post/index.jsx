@@ -6,14 +6,12 @@ import DeleteIcon from "@mui/icons-material/Clear";
 import EditIcon from "@mui/icons-material/Edit";
 import EyeIcon from "@mui/icons-material/RemoveRedEyeOutlined";
 import CommentIcon from "@mui/icons-material/ChatBubbleOutlineOutlined";
-import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
-import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import styles from "./Post.module.scss";
 import { CreatorInfo } from "../CreatorInfo";
 import { PostSkeleton } from "./Skeleton";
 import { Link } from "react-router-dom";
-import { fetchLikePost, fetchRemovePost } from "../../redux/slices/posts";
+import { fetchRemovePost } from "../../redux/slices/posts";
 
 export const Post = ({
   id,
@@ -21,7 +19,6 @@ export const Post = ({
   createdAt,
   imageUrl,
   creator,
-  likesCount,
   viewsCount,
   commentsCount,
   tags,
@@ -30,15 +27,10 @@ export const Post = ({
   isLoading,
   isEditable,
 }) => {
-  const [like, setLike] = React.useState(false);
   const dispatch = useDispatch();
   if (isLoading) {
     return <PostSkeleton />;
   }
-
-  const onClickLike = () => {
-    dispatch(fetchLikePost(id));
-  };
 
   const onClickRemove = () => {
     if (window.confirm("Вы действительно хотите удалить статью?")) {
@@ -85,21 +77,6 @@ export const Post = ({
           {children && <div className={styles.content}>{children}</div>}
           <ul className={styles.postDetails}>
             <div>
-              <div
-                className={styles.postDetailsLike}
-                onClick={() => setLike(!like)}
-              >
-                <li onClick={onClickLike}>
-                  {like ? (
-                    <FavoriteIcon style={{ color: "red" }} />
-                  ) : (
-                    <FavoriteBorderIcon />
-                  )}
-
-                  <span>{likesCount}</span>
-                </li>
-              </div>
-
               <ul className={styles.postDetailsLike}>
                 <li>
                   <CommentIcon />

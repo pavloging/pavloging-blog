@@ -24,8 +24,8 @@ export const Registration = () => {
   } = useForm({
     defaultValues: {
       fullName: "Вася Пупкин",
-      email: "vasya@gmail.com",
-      password: "123456789",
+      email: "",
+      password: "",
     },
     mode: "all",
   });
