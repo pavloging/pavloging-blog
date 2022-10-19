@@ -1,0 +1,27 @@
+.root {
+  width: 400px;
+  padding: 50px;
+  border: 1px solid #dedede;
+  margin: 50px auto;
+}
+
+.title {
+  text-align: center !important;
+  font-weight: bold !important;
+  margin-bottom: 30px !important;
+}
+
+.form,
+.center {
+  text-align: center;
+
+  div::before {
+    border-bottom: 1px solid rgb(255 255 255 / 42%);
+  }
+  div::after {
+    border-bottom: 1px solid rgba(176, 176, 176, 0.42);
+  }
+  input {
+    color: #fff;
+  }
+}
