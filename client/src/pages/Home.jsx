@@ -61,7 +61,7 @@ export const Home = () => {
                     title={obj.title}
                     imageUrl={
                       obj.imageUrl
-                        ? `http://localhost:4444${obj.imageUrl}`
+                        ? `https://pavloging-blog.onrender.com${obj.imageUrl}`
                         : null
                     }
                     creator={obj.creator}

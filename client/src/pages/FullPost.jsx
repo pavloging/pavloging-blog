@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "../axios";
-// import { useNavigate } from "react-router-dom";
 
 import { Post } from "../components/Post";
 import { Index } from "../components/AddComment";
@@ -39,7 +38,9 @@ export const FullPost = () => {
         id={data._id}
         title={data.title}
         imageUrl={
-          data.imageUrl ? `http://localhost:4444${data.imageUrl}` : null
+          data.imageUrl
+            ? `https://pavloging-blog.onrender.com${data.imageUrl}`
+            : null
         }
         creator={data.creator}
         createdAt={data.createdAt}
