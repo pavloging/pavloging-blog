@@ -1,0 +1,62 @@
+.title {
+  input {
+    font-size: 42px;
+    font-weight: 900;
+  }
+
+  div {
+    &:before,
+    &:after {
+      display: none;
+    }
+  }
+}
+
+.image {
+  width: 100%;
+}
+
+.tags {
+  margin: 15px 0;
+}
+
+.editor {
+  margin: 30px -30px;
+
+  :global {
+    .cm-s-easymde {
+      padding: 0 30px;
+      color: rgba(255, 255, 255, 0.9);
+      background-color: rgb(255 255 255 / 0.1%);
+      border: 0;
+      font-size: 22px;
+    }
+    .editor-toolbar {
+      padding: 5px 30px;
+      margin: 0 0 10px 0;
+      border: 0;
+      background-color: rgb(255 255 255 / 0.2%);
+    }
+    .editor-toolbar button:hover {
+      transition: 0.4s;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+
+  button {
+    margin-right: 15px;
+  }
+}
+
+.titleInput input {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tagsInput input {
+  color: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.9) !important;
+}

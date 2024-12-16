@@ -1,0 +1,33 @@
+.root {
+  padding: 10px 0;
+  border-bottom: 1px solid #222054;
+  margin-bottom: 30px;
+}
+
+.inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: rgb(0, 0, 0);
+  font-weight: 700;
+  line-height: 35px;
+  text-transform: uppercase;
+  letter-spacing: 0.15px;
+  border-radius: 5px;
+  padding: 0 10px;
+  text-decoration: none;
+
+  &:hover {
+    color: #4361ee;
+  }
+}
+
+.buttons {
+  margin-right: 30px;
+  button {
+    margin-left: 10px;
+  }
+}
